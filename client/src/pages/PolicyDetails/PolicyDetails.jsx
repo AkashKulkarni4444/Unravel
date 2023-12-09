@@ -35,7 +35,7 @@ function PolicyDetails() {
   const displayRazorpay = async () => {
     const options = {
       key: "rzp_test_CFaCcyskyo1gnl",
-      amount: 12440 * 100, // Amount in paise (Example: 50000 paise = ₹500)
+      amount: 12240 * 100, // Amount in paise (Example: 50000 paise = ₹500)
       currency: "INR",
       name: "Insurance Policy no. 51772",
       description: "PAyment For Health Insurance",
@@ -53,7 +53,7 @@ function PolicyDetails() {
         contact: "8076784892",
       },
       theme: {
-        color: "#333333",
+        color: "#000080",
       },
     };
     const razorpayInstance = new window.Razorpay(options);
@@ -363,7 +363,7 @@ function PolicyDetails() {
               >
                 <div className="flex justify-between">
                   <div>Base Premium - 2 Years</div>
-                  <div className="font-bold text-base">₹ 24,235</div>
+                  <div className="font-bold text-base">₹ 12,240</div>
                 </div>
               </div>
 
@@ -456,7 +456,7 @@ function PolicyDetails() {
                 >
                   <div>Total Premium</div>
                   <span className="font-bold text-base text-right">
-                    ₹ 24,235
+                    ₹ 12,240
                   </span>
                 </div>
                 <button
