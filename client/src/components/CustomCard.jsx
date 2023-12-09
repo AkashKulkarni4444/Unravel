@@ -16,6 +16,7 @@ import {
   import CustomCardModal from "./CustomCardModal.jsx";
   import VerticalImageCarousel from "./VerticalImageCarousel.jsx";
   import InitialProductInfo from "./InitialProductInfo.jsx";
+import { useNavigate } from "react-router";
   const CustomCard = ({ productData }) => {
     const valueFormatter = (value) => `${value} persons`;
     const [open, setOpen] = useState(false);
@@ -28,9 +29,11 @@ import {
     const [majorHoverState, setMajorHoverState] = useState(false);
     const [isAddedToCompareList, setIsAddedToCompareList] = useState(false);
     const categoriesList = productData.categories.join(", ");
-  
+
+    const navigate = useNavigate();
+    
     return (
-      <div className="w-60 mt-10 mx-4 rounded-3xl hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
+      <div className="w-60 mt-10 mx-4 rounded-3xl hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] " onClick={()=>{navigate('/policydetails')}} >
         <div className="flex flex-col justify-start items-center">
           {/* Upper Div */}
           <div
