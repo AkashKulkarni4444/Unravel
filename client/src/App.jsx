@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import RootLayout from './pages/RootLayout';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Auth from './pages/Auth';
+import InsuranceSearchPage from './pages/InsuranceSearchPage';
 import Layout from './components/dashboard/Layout/Layout';
 import Dashboard from './pages/dashboard/Dashboard/Dashboard';
 // import BoardPage from './pages/dashboard/Board/Board';
@@ -13,8 +15,8 @@ function App() {
   const router = createBrowserRouter([
     { path: '/', element: <RootLayout/>, 
       children: [
-        // {path: '/', element: <Homepage/> },
-        // {path: '/ContactUs', element: <ContactUs/> },
+        {path: '/auth', element: <Auth/> },
+        {path: '/search', element: <InsuranceSearchPage/> },
         // {path: '/wishlist', element: <WishlistPage/>},
         // {path: '/wishlist', element: <WishlistPage/>},
       ]
