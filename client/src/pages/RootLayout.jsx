@@ -10,7 +10,7 @@ function RootLayout(){
 
             {/* <Header/> */}
             <Outlet/>
-            <h1>Root Of All</h1>
+            {/* <h1>Root Of All</h1> */}
             {/* <Footer/> */}
       
     </Fragment> 
