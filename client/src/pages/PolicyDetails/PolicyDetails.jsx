@@ -64,7 +64,9 @@ function PolicyDetails() {
                   label="Cover Amount"
                   onChange={handleChange}
                 >
-                  <MenuItem value={5}>5 Lakh </MenuItem>
+                  <MenuItem value={5}>
+                    <div className="left">5 Lakh</div>{" "}
+                  </MenuItem>
                   <MenuItem value={7}>7 Lakh </MenuItem>
                   <MenuItem value={10}>10 Lakh </MenuItem>Premium 10,500/Year
                 </Select>
@@ -201,6 +203,81 @@ function PolicyDetails() {
           </div>
 
           <div className="flex flex-col text-left mb-4 p-4 bg-white">
+            <div className="w-[100%] font-bold text-lg">
+              Recommended Add-ons
+            </div>
+            <span
+              style={{
+                fontSize: "14px",
+                display: "block",
+                fontWeight: 400,
+                color: "#505f79",
+                marginTop: "4px",
+                lineHeight: 1.5,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Add-ons are a smart way to enhance your cover at a fraction of the
+              cost.
+            </span>
+
+            <div
+              className="mt-4 border-2 border-solid"
+              style={{
+                padding: "16px 0 6px",
+                justifyContent: "between",
+                minHeight: "80px",
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+
+              }}
+            >
+              <div className="add-on-box w-[51%] px-3 flex">
+                <div className="logo w-[120px] mr-4 ml-2">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet="https://static.pbcdn.in/health-cdn/images/insurer-logo/Aditya_Birla@2x.webp"
+                    />
+                    <source
+                      type="image/png"
+                      srcSet="https://static.pbcdn.in/health-cdn/images/insurer-logo/Aditya_Birla@2x.png"
+                    />
+                    <img
+                      src="https://static.pbcdn.in/health-cdn/images/insurer-logo/Aditya_Birla@2x.png"
+                      alt="Aditya Birla"
+                      width="100"
+                      style={{margin: "auto 0", width: "100px", height: "auto"}}
+                    />
+                  </picture>
+                </div>
+              
+                <div
+                className="w-18"
+                style={{
+                  lineHeight: "22px",
+                  fontSize: "16px !important",
+                  WebkitLineClamp: "inherit",
+                  maxHeight: "100%",
+                  overflow: "hidden",
+                  marginBottom: "0px",
+                  marginLeft: '1rem',
+                  fontWeight: 700,
+                }}
+                  > Critical Illness - 20 critical illnesses covered</div>
+              </div>
+
+              <div className="justify-end mr-4 mb-2">
+                <Radio></Radio>
+              </div>
+
+
+              </div>
+             
+          </div>
+
+          <div className="flex flex-col text-left mb-4 p-4 bg-white">
             <div className="w-[100%] font-bold text-lg">Members Covered</div>
             <div className="flex justify-between mt-3">
               <div>Harshit(22)</div>{" "}
@@ -246,9 +323,9 @@ function PolicyDetails() {
                   style={{
                     fontWeight: 700,
                     fontSize: "14px",
-                    
+
                     textAlign: "left",
-                    display: 'flex'
+                    display: "flex",
                   }}
                 >
                   {" "}
@@ -325,16 +402,28 @@ function PolicyDetails() {
                     marginRight: "-16px",
                     padding: "8px 16px",
                     borderBottom: "1px solid #dfe1e6",
-                    display: 'flex'
+                    display: "flex",
                   }}
                 >
-
                   <div>Total Premium</div>
-                  <span className="font-bold text-base text-right">₹ 24,235</span>
+                  <span className="font-bold text-base text-right">
+                    ₹ 24,235
+                  </span>
                 </div>
-                <button className="hover:bg-[#FC2E00] hover:text-white" 
-                style={{ width: '100%', backgroundColor: '#00a3bf', color: '#fff', padding: '12px', borderRadius: '8px', marginTop: '20px', fontSize: '16px', fontWeight: 700, cursor: 'pointer'
-}}>
+                <button
+                  className="hover:bg-[#FC2E00] hover:text-white"
+                  style={{
+                    width: "100%",
+                    backgroundColor: "#00a3bf",
+                    color: "#fff",
+                    padding: "12px",
+                    borderRadius: "8px",
+                    marginTop: "20px",
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                  }}
+                >
                   Proceed To Checkout
                 </button>
               </div>
