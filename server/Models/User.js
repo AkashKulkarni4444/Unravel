@@ -5,6 +5,6 @@ const userSchema = mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   id: { type: String },
-  type:{type: 'Client' | 'HealthcareProvider' | 'InsuranceProvider' | 'Admin' , required:true},
+  userType: { type: String, required:true}, //"Client" | "HealthcareProvider" | "InsuranceProvider" | "Admin"
 });
 export default mongoose.model("User", userSchema);
