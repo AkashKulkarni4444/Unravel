@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import RootLayout from './pages/RootLayout';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Homepage from './pages/PolicyDetails/PolicyDetails';
+import PolicyDetails from './pages/PolicyDetails/PolicyDetails';
 import Auth from './pages/Auth';
 import InsuranceSearchPage from './pages/InsuranceSearchPage';
 import Login from './pages/Login'
@@ -17,6 +19,9 @@ function App() {
   const router = createBrowserRouter([
     { path: '/', element: <RootLayout/>, 
       children: [
+        // {path: '/', element: <Homepage/> },
+        {path: '/policydetails', element: <PolicyDetails/> },
+        // {path: '/ContactUs', element: <ContactUs/> },
         {path: '/auth', element: <Auth/> },
         {path: '/login', element: <Login/> },
         {path: '/signup', element: <Signup/> },
