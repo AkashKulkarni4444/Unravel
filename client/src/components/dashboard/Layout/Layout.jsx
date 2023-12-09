@@ -3,6 +3,7 @@ import css from "./Layout.module.css";
 import { BiSearch } from "react-icons/bi";
 import Sidebar from "../Sidebar/Sidebar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
+import profile from "../../../assets/profile.png";
 
 const Layout = () => {
 
@@ -35,7 +36,7 @@ const Layout = () => {
           </div>
 
           <div className={css.profile}>
-            <img src="./profile.png" alt="person image" />
+            <img src={profile} alt="person image" />
             <div className={css.details}>
               <span>John Doe</span>
               <span>john.doe@gmail.com</span>

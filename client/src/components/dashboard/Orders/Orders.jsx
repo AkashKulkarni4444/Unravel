@@ -2,12 +2,13 @@ import React from 'react'
 import { groupNumber, ordersData } from '../../../data'
 import OrdersPieChart from '../OrdersPieChart/OrdersPieChart'
 import css from './Orders.module.css'
+import logo from "../../../assets/logo.png";
 
 const Orders = () => {
     return (
         <div className={`${css.container} theme-container`}>
             <div className={css.head}>
-                <img src="./logo.png" alt="logo" />
+                <img src={logo} alt="logo" />
                 <span>Orders today</span>
             </div>
 

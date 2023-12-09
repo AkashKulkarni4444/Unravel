@@ -3,11 +3,13 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
 import { FaTasks } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import logo from "../../../assets/logo.png";
+
 const Sidebar = () => {
     return (
         <div className={css.container}>
 
-            <img src="./logo.png" alt="logo" className={css.logo} />
+            <img src={logo} alt="logo" className={css.logo} />
 
 
             <div className={css.menu}>
@@ -24,7 +26,8 @@ const Sidebar = () => {
                 </NavLink>
 
                 <NavLink
-                    to="board"
+                    // to="board"
+                    to="home"
                     className={css.item}
                     title="Trello Board"
                 >
@@ -32,7 +35,8 @@ const Sidebar = () => {
                 </NavLink>
 
                 <NavLink
-                    to="users"
+                    // to="users"
+                    to="home"
                     className={css.item}
                     title="Users"
                 >
