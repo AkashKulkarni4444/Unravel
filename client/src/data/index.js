@@ -2,49 +2,49 @@ import moment from "moment/moment";
 
 export const cardsData = [
   {
-    title: "Revenue",
+    title: "Commission",
     change: 24,
-    amount: 42056,
+    amount: 4000,
   },
   {
     title: "Orders",
     change: -14,
-    amount: 52125.03,
+    amount: 4000,
   },
   {
     title: "Expenses",
     change: 18,
-    amount: 1216.5,
+    amount: 3000,
   },
   {
     title: "Profit",
     change: 12,
-    amount: 10125.0,
+    amount: 400,
   },
 ];
 
 export const ordersData = [
   {
-    name: "Skatebnoard",
-    type: "Illustration",
-    items: 58,
-    change: 290,
+    name: "Poorv Kumar",
+    type: "Medical Checkup",
+    items: 1,
+    change: 10,
   },
   {
-    name: "Language courses",
-    type: "Illustration",
-    items: 12,
-    change: 72
+    name: "Akash Kulkarni",
+    type: "Health Insurance",
+    items: 1,
+    change: 10
   },
   {
-    name: "Office Collaboration",
-    type: "Illustration",
-    items: 7,
-    change: 70
+    name: "Harshit Chauhan",
+    type: "Medical Checkup",
+    items: 1,
+    change: 10
   },
   {
-    name: "Robot",
-    type: "Illustration",
+    name: "Aarav Nigam",
+    type: "Health Checkup",
     items: 21,
     change: 15
   }

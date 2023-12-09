@@ -9,12 +9,12 @@ const Orders = () => {
         <div className={`${css.container} theme-container`}>
             <div className={css.head}>
                 <img src={logo} alt="logo" />
-                <span>Orders today</span>
+                <span>Total Revenue</span>
             </div>
 
             <div className={`grey-container ${css.stat}`}>
                 <span>Amount</span>
-                <span>$ {groupNumber(4560)}</span>
+                <span>$ {groupNumber(4000)}</span>
             </div>
 
             <div className={css.orders}>
