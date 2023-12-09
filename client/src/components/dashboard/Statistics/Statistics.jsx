@@ -7,7 +7,7 @@ import StatisticsChart from '../StatisticsChart/StatisticsChart'
 const Statistics = () => {
     return (
         <div className={`${css.container} theme-container`}>
-            <span className={css.title}>Overview Statistics</span>
+            <span className={css.title}>Policy Holder</span>
 
             <div className={`${css.cards} grey-container`}>
 
@@ -17,20 +17,92 @@ const Statistics = () => {
                     </div>
 
                     <div className={css.card}>
-                        <span>Top item this month</span><span>Office comps</span>
+                        <span>Insurance this month</span><span>Poorv Kumar</span>
                     </div>
                 </div>
 
                 <div className={css.card}>
-                    <span>Items</span><span>$ {groupNumber(455)}</span>
+                    <span>Items</span><span>Medical Treatment Policy</span>
                 </div>
 
                 <div className={css.card}>
-                    <span>Profit</span><span>$ {groupNumber(370000)}</span>
+                    <span>Policy Price</span><span>$ {groupNumber(1250)}</span>
                 </div>
 
                 <div className={css.card}>
                     <span>Daily Average</span><span>$ {groupNumber(2000)}</span>
+                </div>
+            </div>
+            <div className={`${css.cards} grey-container`}>
+
+                <div>
+                    <div className={css.arrowIcon}>
+                        <BsArrowUpShort />
+                    </div>
+
+                    <div className={css.card}>
+                        <span>Insurance this month</span><span>Akash Kulkarni</span>
+                    </div>
+                </div>
+
+                <div className={css.card}>
+                    <span>Items</span><span>Health Insurance</span>
+                </div>
+
+                <div className={css.card}>
+                    <span>Policy Price</span><span>$ {groupNumber(1000)}</span>
+                </div>
+
+                <div className={css.card}>
+                    <span>Daily Average</span><span>$ {groupNumber(2344)}</span>
+                </div>
+            </div>
+            <div className={`${css.cards} grey-container`}>
+
+                <div>
+                    <div className={css.arrowIcon}>
+                        <BsArrowUpShort />
+                    </div>
+
+                    <div className={css.card}>
+                        <span>Insurance this month</span><span>Harshit Chauhan</span>
+                    </div>
+                </div>
+
+                <div className={css.card}>
+                    <span>Items</span><span>Health Checkup</span>
+                </div>
+
+                <div className={css.card}>
+                    <span>Policy Price</span><span>$ {groupNumber(900)}</span>
+                </div>
+
+                <div className={css.card}>
+                    <span>Daily Average</span><span>$ {groupNumber(1234)}</span>
+                </div>
+            </div>
+            <div className={`${css.cards} grey-container`}>
+
+                <div>
+                    <div className={css.arrowIcon}>
+                        <BsArrowUpShort />
+                    </div>
+
+                    <div className={css.card}>
+                        <span>Insurance this month</span><span>Aarav Nigam</span>
+                    </div>
+                </div>
+
+                <div className={css.card}>
+                    <span>Items</span><span>Medical Insurance</span>
+                </div>
+
+                <div className={css.card}>
+                    <span>Policy Price</span><span>$ {groupNumber(850)}</span>
+                </div>
+
+                <div className={css.card}>
+                    <span>Daily Average</span><span>$ {groupNumber(452)}</span>
                 </div>
             </div>
 
