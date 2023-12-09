@@ -6,14 +6,64 @@ import {
   MenuItem,
   Radio,
 } from "@mui/material";
+import {useNavigate} from 'react-router-dom'
+import axios from "axios";
 
 function PolicyDetails() {
   const [cover, setCover] = useState(5);
+
+  const navigate = useNavigate();
 
   function handleChange(event) {
     setCover(event.target.value);
   }
 
+  const [orderId, setOrderId] = useState("");
+
+  const createOrder = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/payment/create-order"
+      );
+      setOrderId(response.data.id);
+      console.log(response.data.id)
+    } catch (error) {
+      console.error("Error in placing order:", error);
+    }
+  };
+
+  const displayRazorpay = async () => {
+    const options = {
+      key: "rzp_test_CFaCcyskyo1gnl",
+      amount: 12240 * 100, // Amount in paise (Example: 50000 paise = ₹500)
+      currency: "INR",
+      name: "Insurance Policy no. 51772",
+      description: "PAyment For Health Insurance",
+      order_id: orderId,
+      handler: function (response) {
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);o
+        navigate('/policydetails')
+        alert("Payment successful")
+      },
+      prefill: {
+        name: "Harshit",
+        email: "harshitc@gmail.com",
+        contact: "8076784892",
+      },
+      theme: {
+        color: "#000080",
+      },
+    };
+    const razorpayInstance = new window.Razorpay(options);
+    razorpayInstance.open();
+  };
+
+  const handlePayment = async () => {
+    await createOrder();
+    await displayRazorpay();
+ };
   return (
     <Fragment>
       <div className="flex flex-row items-center justify-center w-[100%] px-6 py-2 bg-[#F4F5F7] text-black">
@@ -222,10 +272,9 @@ function PolicyDetails() {
             </span>
 
             <div
-              className="mt-4 border-2 border-solid"
+              className="mt-4 border-2 border-solid justify-between"
               style={{
-                padding: "16px 0 6px",
-                justifyContent: "between",
+                padding: "10px 0 6px",
                 minHeight: "80px",
                 display: "flex",
                 alignItems: "center",
@@ -268,7 +317,7 @@ function PolicyDetails() {
                   > Critical Illness - 20 critical illnesses covered</div>
               </div>
 
-              <div className="justify-end mr-4 mb-2">
+              <div className="justify-end mr-4">
                 <Radio></Radio>
               </div>
 
@@ -314,7 +363,7 @@ function PolicyDetails() {
               >
                 <div className="flex justify-between">
                   <div>Base Premium - 2 Years</div>
-                  <div className="font-bold text-base">₹ 24,235</div>
+                  <div className="font-bold text-base">₹ 12,240</div>
                 </div>
               </div>
 
@@ -407,7 +456,7 @@ function PolicyDetails() {
                 >
                   <div>Total Premium</div>
                   <span className="font-bold text-base text-right">
-                    ₹ 24,235
+                    ₹ 12,240
                   </span>
                 </div>
                 <button
@@ -423,6 +472,7 @@ function PolicyDetails() {
                     fontWeight: 700,
                     cursor: "pointer",
                   }}
+                  onClick={handlePayment}
                 >
                   Proceed To Checkout
                 </button>

@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from 'dotenv';
 import { OAuth2Client } from "google-auth-library";
 import authRoutes from './Routes/auth.js'
+import paymentRoutes from './Routes/PaymentRoutes.js'
 const app = express();
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use("/auth",authRoutes);
+app.use("/payment",paymentRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.get('/',(req,res)=>{
