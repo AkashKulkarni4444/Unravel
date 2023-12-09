@@ -6,6 +6,11 @@ import Auth from './pages/Auth';
 import InsuranceSearchPage from './pages/InsuranceSearchPage';
 import Login from './pages/Login'
 import Signup from './pages/Signup';
+import Layout from './components/dashboard/Layout/Layout';
+import Dashboard from './pages/dashboard/Dashboard/Dashboard';
+// import BoardPage from './pages/dashboard/Board/Board';
+import Calendar from './pages/dashboard/Calendar/Calendar';
+// import DataGrid from './pages/dashboard/DataGrid/DataGrid';
 
 function App() {
 
@@ -17,8 +22,19 @@ function App() {
         {path: '/signup', element: <Signup/> },
         {path: '/search', element: <InsuranceSearchPage/> },
         // {path: '/wishlist', element: <WishlistPage/>},
+        // {path: '/wishlist', element: <WishlistPage/>},
       ]
     },  
+    {
+      path: "/dashboard",
+      element: <Layout />,
+      children: [
+        { path: "home", element: <Dashboard /> },
+        { path: "calendar", element: <Calendar /> },
+        // { path: "board", element: <BoardPage /> },
+        // { path: "/users", element: <DataGrid /> },
+      ],
+    },
   ]);
 
   return (
