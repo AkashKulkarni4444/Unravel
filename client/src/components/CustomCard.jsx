@@ -159,14 +159,14 @@ import {
             </div>
             {!majorHoverState && (
               <img
-                src="https://d-themes.com/react_asset_api/molla/uploads/product_5_1_300x300_3dbc9b1611.jpg"
+                src="https://static.pbcdn.in/health-cdn/images/insurer-logo/Niva_Bupa_(formerly_known_as_Max_Bupa)@2x.png"
                 alt="image1"
                 className={`w-full h-full mt-[-44%] rounded-3xl`}
               />
             )}
             {majorHoverState && (
               <img
-                src="https://d-themes.com/react_asset_api/molla/uploads/product_5_2_300x300_100e169228.jpg"
+                src="https://static.pbcdn.in/health-cdn/images/insurer-logo/Care_Health@2x.png"
                 alt="image1"
                 className="w-full h-full mt-[-44%] rounded-3xl "
               />

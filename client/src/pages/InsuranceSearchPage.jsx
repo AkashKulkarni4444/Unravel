@@ -15,6 +15,7 @@ import { styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import Slider, { SliderThumb } from "@mui/material/Slider";
 import MultipleSelectChip from "../components/MultiAutoComplete";
+import Navbar from '../components/Navbar'
 const productData = {
   _id: "asdfghjkl123456789",
   name: "Product Name",
@@ -57,12 +58,12 @@ const productData = {
     {
       type: "image",
       source:
-        "https://d-themes.com/react_asset_api/molla/uploads/product_5_1_300x300_3dbc9b1611.jpg",
+        "./image1.png",
     },
     {
       type: "image",
       source:
-        "https://d-themes.com/react_asset_api/molla/uploads/product_5_2_300x300_100e169228.jpg",
+        "./image2.png",
     },
     {
       type: "image",
@@ -255,139 +256,414 @@ const InsuranceSearchPage = () => {
   function valueLabelFormat(value) {
     return `₹ ${value}`;
   }
-  return (
-    <div className="flex flex-col mt-2">
-      <BreadCrumb breadcrumbs={bc} style={`pc`} />
-      <hr className="bg-gray-800 mt-2" />
-      <div className="flex flex-row mx-[5%] h-full ">
-        <div className="flex flex-col w-2/5 mr-4 py-4">
-          <div className="flex flex-row justify-between items-center align-middle ">
-            <div>Filters:</div>
-            <Button onClick={() => {}}>
-              <div className="text-cyan-600 text-sm font-semibold">
-                Clean All
-              </div>
-            </Button>
-          </div>
-          {/* Customer Rating */}
-          <Accordion style={{ boxShadow: "none" }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography><span className="text-cyan-600">Customer Rating</span></Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography className="text-[rgba(55,55,55,1)]" >Higher customer rating equals better customer satisfaction.</Typography>
-              <Rating onChange={(e,newVal)=>{setcustomerRating(newVal)}} />
-            </AccordionDetails>
-          </Accordion>
-          {/* Price */}
-          <Accordion style={{ boxShadow: "none" }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography><span className="text-cyan-600" >Price</span></Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Stick to a budget ?</Typography>
+  // return (
+  //   <div className="flex flex-col mt-2">
+  //     <BreadCrumb breadcrumbs={bc} style={`pc`} />
+  //     <hr className="bg-gray-800 mt-2" />
+  //     <div className="flex flex-row mx-[5%] h-full ">
+  //       <div className="flex flex-col w-2/5 mr-4 py-4">
+  //         <div className="flex flex-row justify-between items-center align-middle ">
+  //           <div>Filters:</div>
+  //           <Button onClick={() => {}}>
+  //             <div className="text-cyan-600 text-sm font-semibold">
+  //               Clean All
+  //             </div>
+  //           </Button>
+  //         </div>
+  //         {/* Customer Rating */}
+  //         <Accordion style={{ boxShadow: "none" }}>
+  //           <AccordionSummary
+  //             expandIcon={<ExpandMoreIcon />}
+  //             aria-controls="panel1a-content"
+  //             id="panel1a-header"
+  //           >
+  //             <Typography><span className="text-cyan-600">Customer Rating</span></Typography>
+  //           </AccordionSummary>
+  //           <AccordionDetails>
+  //             <Typography className="text-[rgba(55,55,55,1)]" >Higher customer rating equals better customer satisfaction.</Typography>
+  //             <Rating onChange={(e,newVal)=>{setcustomerRating(newVal)}} />
+  //           </AccordionDetails>
+  //         </Accordion>
+  //         {/* Price */}
+  //         <Accordion style={{ boxShadow: "none" }}>
+  //           <AccordionSummary
+  //             expandIcon={<ExpandMoreIcon />}
+  //             aria-controls="panel1a-content"
+  //             id="panel1a-header"
+  //           >
+  //             <Typography><span className="text-cyan-600" >Price</span></Typography>
+  //           </AccordionSummary>
+  //           <AccordionDetails>
+  //             <Typography>Stick to a budget ?</Typography>
 
-              <AirbnbSlider
-                slots={{ thumb: AirbnbThumbComponent }}
-                getAriaLabel={(index) =>
-                  index === 0 ? "Minimum price" : "Maximum price"
-                }
-                // defaultValue={[200, 4000]}
-                valueLabelDisplay="on"
-                className="mt-20"
-                min={0}
-                valueLabelFormat={valueLabelFormat}
-                max={10000}
-                onChangeCommitted={(e,newVal)=>{setPriceSliderValue(newVal)}}
-                value={priceSliderValue}
-              />
-            </AccordionDetails>
-          </Accordion>
-          {/* Influencers Choice */}
-          <Accordion style={{ boxShadow: "none" }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+  //             <AirbnbSlider
+  //               slots={{ thumb: AirbnbThumbComponent }}
+  //               getAriaLabel={(index) =>
+  //                 index === 0 ? "Minimum price" : "Maximum price"
+  //               }
+  //               // defaultValue={[200, 4000]}
+  //               valueLabelDisplay="on"
+  //               className="mt-20"
+  //               min={0}
+  //               valueLabelFormat={valueLabelFormat}
+  //               max={10000}
+  //               onChangeCommitted={(e,newVal)=>{setPriceSliderValue(newVal)}}
+  //               value={priceSliderValue}
+  //             />
+  //           </AccordionDetails>
+  //         </Accordion>
+  //         {/* Influencers Choice */}
+  //         <Accordion style={{ boxShadow: "none" }}>
+  //           <AccordionSummary
+  //             expandIcon={<ExpandMoreIcon />}
+  //             aria-controls="panel1a-content"
+  //             id="panel1a-header"
+  //           >
+  //             <Typography><span className="text-cyan-600" >Influencers Choice</span></Typography>
+  //           </AccordionSummary>
+  //           <AccordionDetails>
+  //             <Typography>Fan of someone ? Follow their style .</Typography>
+  //             <MultipleSelectChip/>
+  //           </AccordionDetails>
+  //         </Accordion>
+  //         {/* Rugged Verrified */}
+  //         {/* <Accordion
+  //           style={{ boxShadow: "none" }}
+  //         >
+  //           <AccordionSummary
+  //             expandIcon={<ExpandMoreIcon />}
+  //             aria-controls="panel1a-content"
+  //             id="panel1a-header"
+  //           >
+  //             <Typography>Rugged Verrified</Typography>
+  //           </AccordionSummary>
+  //           <AccordionDetails>
+  //             <Typography>
+  //               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  //               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+  //               eget.
+  //             </Typography>
+  //           </AccordionDetails>
+  //         </Accordion> */}
+  //         {/* Availability */}
+  //         <Accordion style={{ boxShadow: "none" }}>
+  //           <AccordionSummary
+  //             expandIcon={<ExpandMoreIcon />}
+  //             aria-controls="panel1a-content"
+  //             id="panel1a-header"
+  //           >
+  //           <Typography><span className="text-cyan-600" >Availability</span></Typography>
+  //           </AccordionSummary>
+  //           <AccordionDetails className="flex flex-row" >
+  //             <div className="w-3/4" >
+  //             <Typography><span className="text-xs leading-3 font-semibold text-[rgba(55,55,55,1)]" >Show only Available products</span></Typography>
+  //             </div>
+  //             <div className="w-1/4" >
+  //             <Checkbox onChange={(e,v)=>{setAvailability(v)}} />
+  //             </div>
+  //           </AccordionDetails>
+  //         </Accordion>
+  //       </div>
+  //       <div className="flex flex-col">
+  //         <div>
+  //           Showing <em><b>12</b></em> of <em><b>52</b></em> results
+  //         </div>
+  //         <div className="flex flex-row flex-wrap justify-around">
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           {/* <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} />
+  //           <CustomCard productData={productData} /> */}
+  //         </div>
+  //       </div>
+  //     </div>
+  //     <div className="self-center mt-8 ">
+  //     <Pagination color="primary" count={10} page={page} onChange={handleChange} />
+  //     </div>
+  //   </div>
+  // );
+  return (
+    <div className='flex flex-col justify-between min-h-screen'>
+        <Navbar />
+        <div className='mt-24'></div>
+        <div className="flex flex-col mt-2">
+        <BreadCrumb breadcrumbs={bc} style={`pc`} />
+        <hr className="bg-gray-800 mt-2" />
+        <div className="flex flex-row mx-[5%] h-full ">
+          <div className="flex flex-col w-2/5 mr-4 py-4">
+            <div className="flex flex-row justify-between items-center align-middle ">
+              <div>Filters:</div>
+              <Button onClick={() => {}}>
+                <div className="text-cyan-600 text-sm font-semibold">
+                  Clean All
+                </div>
+              </Button>
+            </div>
+            {/* Customer Rating */}
+            <Accordion style={{ boxShadow: "none" }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography><span className="text-cyan-600">Customer Rating</span></Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className="text-[rgba(55,55,55,1)]" >Higher customer rating equals better customer satisfaction.</Typography>
+                <Rating onChange={(e,newVal)=>{setcustomerRating(newVal)}} />
+              </AccordionDetails>
+            </Accordion>
+            {/* Price */}
+            <Accordion style={{ boxShadow: "none" }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography><span className="text-cyan-600" >Price</span></Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>Stick to a budget ?</Typography>
+  
+                <AirbnbSlider
+                  slots={{ thumb: AirbnbThumbComponent }}
+                  getAriaLabel={(index) =>
+                    index === 0 ? "Minimum price" : "Maximum price"
+                  }
+                  // defaultValue={[200, 4000]}
+                  valueLabelDisplay="on"
+                  className="mt-20"
+                  min={0}
+                  valueLabelFormat={valueLabelFormat}
+                  max={10000}
+                  onChangeCommitted={(e,newVal)=>{setPriceSliderValue(newVal)}}
+                  value={priceSliderValue}
+                />
+              </AccordionDetails>
+            </Accordion>
+            {/* Influencers Choice */}
+            <Accordion style={{ boxShadow: "none" }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography><span className="text-cyan-600" >Influencers Choice</span></Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>Fan of someone ? Follow their style .</Typography>
+                <MultipleSelectChip/>
+              </AccordionDetails>
+            </Accordion>
+            {/* Rugged Verrified */}
+            {/* <Accordion
+              style={{ boxShadow: "none" }}
             >
-              <Typography><span className="text-cyan-600" >Influencers Choice</span></Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Fan of someone ? Follow their style .</Typography>
-              <MultipleSelectChip/>
-            </AccordionDetails>
-          </Accordion>
-          {/* Rugged Verrified */}
-          {/* <Accordion
-            style={{ boxShadow: "none" }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Rugged Verrified</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion> */}
-          {/* Availability */}
-          <Accordion style={{ boxShadow: "none" }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-            <Typography><span className="text-cyan-600" >Availability</span></Typography>
-            </AccordionSummary>
-            <AccordionDetails className="flex flex-row" >
-              <div className="w-3/4" >
-              <Typography><span className="text-xs leading-3 font-semibold text-[rgba(55,55,55,1)]" >Show only Available products</span></Typography>
-              </div>
-              <div className="w-1/4" >
-              <Checkbox onChange={(e,v)=>{setAvailability(v)}} />
-              </div>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-        <div className="flex flex-col">
-          <div>
-            Showing <em><b>12</b></em> of <em><b>52</b></em> results
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Rugged Verrified</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion> */}
+            {/* Availability */}
+            <Accordion style={{ boxShadow: "none" }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+              <Typography><span className="text-cyan-600" >Availability</span></Typography>
+              </AccordionSummary>
+              <AccordionDetails className="flex flex-row" >
+                <div className="w-3/4" >
+                <Typography><span className="text-xs leading-3 font-semibold text-[rgba(55,55,55,1)]" >Show only Available products</span></Typography>
+                </div>
+                <div className="w-1/4" >
+                <Checkbox onChange={(e,v)=>{setAvailability(v)}} />
+                </div>
+              </AccordionDetails>
+            </Accordion>
           </div>
-          <div className="flex flex-row flex-wrap justify-around">
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
-            <CustomCard productData={productData} />
+          <div className="flex flex-col">
+            <div>
+              Showing <em><b>12</b></em> of <em><b>52</b></em> results
+            </div>
+            <div className="flex flex-row flex-wrap justify-around">
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              {/* <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} /> */}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="self-center mt-8 ">
-      <Pagination color="primary" count={10} page={page} onChange={handleChange} />
+        <div className="self-center mt-8 ">
+        <Pagination color="primary" count={10} page={page} onChange={handleChange} />
+        </div>
       </div>
     </div>
   );
 };
 
 export default InsuranceSearchPage;
+
+// return (
+//   <div className='flex flex-col justify-between min-h-screen'>
+//       <Navbar />
+//       <div className='mt-24'></div>
+//       <div className="flex flex-col mt-2">
+//       <BreadCrumb breadcrumbs={bc} style={`pc`} />
+//       <hr className="bg-gray-800 mt-2" />
+//       <div className="flex flex-row mx-[5%] h-full ">
+//         <div className="flex flex-col w-2/5 mr-4 py-4">
+//           <div className="flex flex-row justify-between items-center align-middle ">
+//             <div>Filters:</div>
+//             <Button onClick={() => {}}>
+//               <div className="text-cyan-600 text-sm font-semibold">
+//                 Clean All
+//               </div>
+//             </Button>
+//           </div>
+//           {/* Customer Rating */}
+//           <Accordion style={{ boxShadow: "none" }}>
+//             <AccordionSummary
+//               expandIcon={<ExpandMoreIcon />}
+//               aria-controls="panel1a-content"
+//               id="panel1a-header"
+//             >
+//               <Typography><span className="text-cyan-600">Customer Rating</span></Typography>
+//             </AccordionSummary>
+//             <AccordionDetails>
+//               <Typography className="text-[rgba(55,55,55,1)]" >Higher customer rating equals better customer satisfaction.</Typography>
+//               <Rating onChange={(e,newVal)=>{setcustomerRating(newVal)}} />
+//             </AccordionDetails>
+//           </Accordion>
+//           {/* Price */}
+//           <Accordion style={{ boxShadow: "none" }}>
+//             <AccordionSummary
+//               expandIcon={<ExpandMoreIcon />}
+//               aria-controls="panel1a-content"
+//               id="panel1a-header"
+//             >
+//               <Typography><span className="text-cyan-600" >Price</span></Typography>
+//             </AccordionSummary>
+//             <AccordionDetails>
+//               <Typography>Stick to a budget ?</Typography>
+
+//               <AirbnbSlider
+//                 slots={{ thumb: AirbnbThumbComponent }}
+//                 getAriaLabel={(index) =>
+//                   index === 0 ? "Minimum price" : "Maximum price"
+//                 }
+//                 // defaultValue={[200, 4000]}
+//                 valueLabelDisplay="on"
+//                 className="mt-20"
+//                 min={0}
+//                 valueLabelFormat={valueLabelFormat}
+//                 max={10000}
+//                 onChangeCommitted={(e,newVal)=>{setPriceSliderValue(newVal)}}
+//                 value={priceSliderValue}
+//               />
+//             </AccordionDetails>
+//           </Accordion>
+//           {/* Influencers Choice */}
+//           <Accordion style={{ boxShadow: "none" }}>
+//             <AccordionSummary
+//               expandIcon={<ExpandMoreIcon />}
+//               aria-controls="panel1a-content"
+//               id="panel1a-header"
+//             >
+//               <Typography><span className="text-cyan-600" >Influencers Choice</span></Typography>
+//             </AccordionSummary>
+//             <AccordionDetails>
+//               <Typography>Fan of someone ? Follow their style .</Typography>
+//               <MultipleSelectChip/>
+//             </AccordionDetails>
+//           </Accordion>
+//           {/* Rugged Verrified */}
+//           {/* <Accordion
+//             style={{ boxShadow: "none" }}
+//           >
+//             <AccordionSummary
+//               expandIcon={<ExpandMoreIcon />}
+//               aria-controls="panel1a-content"
+//               id="panel1a-header"
+//             >
+//               <Typography>Rugged Verrified</Typography>
+//             </AccordionSummary>
+//             <AccordionDetails>
+//               <Typography>
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+//                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+//                 eget.
+//               </Typography>
+//             </AccordionDetails>
+//           </Accordion> */}
+//           {/* Availability */}
+//           <Accordion style={{ boxShadow: "none" }}>
+//             <AccordionSummary
+//               expandIcon={<ExpandMoreIcon />}
+//               aria-controls="panel1a-content"
+//               id="panel1a-header"
+//             >
+//             <Typography><span className="text-cyan-600" >Availability</span></Typography>
+//             </AccordionSummary>
+//             <AccordionDetails className="flex flex-row" >
+//               <div className="w-3/4" >
+//               <Typography><span className="text-xs leading-3 font-semibold text-[rgba(55,55,55,1)]" >Show only Available products</span></Typography>
+//               </div>
+//               <div className="w-1/4" >
+//               <Checkbox onChange={(e,v)=>{setAvailability(v)}} />
+//               </div>
+//             </AccordionDetails>
+//           </Accordion>
+//         </div>
+//         <div className="flex flex-col">
+//           <div>
+//             Showing <em><b>12</b></em> of <em><b>52</b></em> results
+//           </div>
+//           <div className="flex flex-row flex-wrap justify-around">
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             {/* <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} />
+//             <CustomCard productData={productData} /> */}
+//           </div>
+//         </div>
+//       </div>
+//       <div className="self-center mt-8 ">
+//       <Pagination color="primary" count={10} page={page} onChange={handleChange} />
+//       </div>
+//     </div>
+//   </div>
+// );
