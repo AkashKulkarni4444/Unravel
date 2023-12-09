@@ -13,19 +13,7 @@ import {
 import CheckIcon from "@mui/icons-material/Check";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-// const names = [
-//   "Humaira Sims",
-//   "Santiago Solis",
-//   "Dawid Floyd",
-//   "Mateo Barlow",
-//   "Samia Navarro",
-//   "Kaden Fields",
-//   "Genevieve Watkins",
-//   "Mariah Hickman",
-//   "Rocco Richardson",
-//   "Harris Glenn"
-// ];
-let names = ["SRK","Salman Khan","Virat Kohli"];
+let names = ["LIC","SBI Life Insurance","Adity Birla Sun Life Insurance","Bajaj Allianz","Kotak"];
 
 export default function MultipleSelectChip() {
   // names = influencersEndorsing;
@@ -91,7 +79,7 @@ const MultiAutocomplete = () => {
       id="tags-standard"
       options={names}
       getOptionLabel={(option) => option}
-      defaultValue={[names[0], names[1]]}
+      defaultValue={[names[0], names[1],names[2]]}
       disableCloseOnSelect
       renderOption={(props, option, { selected }) => (
         <MenuItem
