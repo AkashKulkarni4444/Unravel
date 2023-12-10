@@ -407,7 +407,7 @@ const InsuranceSearchPage = () => {
               </Button>
             </div>
             {/* Customer Rating */}
-            <Accordion style={{ boxShadow: "none" }}>
+            <Accordion style={{ boxShadow: "none" }} expanded >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
@@ -421,7 +421,7 @@ const InsuranceSearchPage = () => {
               </AccordionDetails>
             </Accordion>
             {/* Price */}
-            <Accordion style={{ boxShadow: "none" }}>
+            <Accordion style={{ boxShadow: "none" }} expanded>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
@@ -449,7 +449,7 @@ const InsuranceSearchPage = () => {
               </AccordionDetails>
             </Accordion>
             {/* Influencers Choice */}
-            <Accordion style={{ boxShadow: "none" }}>
+            <Accordion style={{ boxShadow: "none" }} expanded>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
@@ -482,7 +482,7 @@ const InsuranceSearchPage = () => {
               </AccordionDetails>
             </Accordion> */}
             {/* Availability */}
-            <Accordion style={{ boxShadow: "none" }}>
+            <Accordion style={{ boxShadow: "none" }} expanded>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
@@ -511,12 +511,12 @@ const InsuranceSearchPage = () => {
               <CustomCard productData={productData} />
               <CustomCard productData={productData} />
               <CustomCard productData={productData} />
-              {/* <CustomCard productData={productData} />
               <CustomCard productData={productData} />
               <CustomCard productData={productData} />
               <CustomCard productData={productData} />
               <CustomCard productData={productData} />
-              <CustomCard productData={productData} /> */}
+              <CustomCard productData={productData} />
+              <CustomCard productData={productData} />
             </div>
           </div>
         </div>

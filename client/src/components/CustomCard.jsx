@@ -46,7 +46,7 @@ import { useNavigate } from "react-router";
             }}
           >
             <div className="flex flex-row justify-between items-start">
-              <div className="flex flex-col justify-start">
+              {/* <div className="flex flex-col justify-start">
                 {productData.tags.map(
                   (tag, index) =>
                     index < 2 && (
@@ -58,10 +58,10 @@ import { useNavigate } from "react-router";
                       </div>
                     )
                 )}
-              </div>
+              </div> */}
               {majorHoverState && (
-                <div className="flex flex-col justify-start items-end">
-                  <div
+                <div className="flex flex-col justify-start items-end mr-[-1rem]">
+                  {/* <div
                     onClick={() => {
                       setIsAddedToWishlist((curr) => !curr);
                     }}
@@ -73,8 +73,8 @@ import { useNavigate } from "react-router";
                     }}
                     className={`${
                       hoverState
-                        ? "bg-[#fcb941] rounded-full z-20 text-white mt-4 mr-4 p-2"
-                        : "rounded-full mt-4 mr-4"
+                        ? "bg-[#fcb941] rounded-full z-20 text-white mt-4 ml-4 p-2"
+                        : "rounded-full mt-4 ml-4"
                     } h-full flex flex-row align-middle items-center justify-center`}
                   >
                     <div
@@ -108,7 +108,7 @@ import { useNavigate } from "react-router";
                         <BsHeart />
                       </div>
                     )}
-                  </div>
+                  </div> */}
                   <div
                     onClick={() => {
                       setIsAddedToCompareList((curr) => !curr);
@@ -121,8 +121,8 @@ import { useNavigate } from "react-router";
                     }}
                     className={`${
                       hoverCompare
-                        ? "bg-[#fcb941] rounded-full z-20 text-white mt-4 mr-4 p-2"
-                        : "rounded-full mt-4 mr-4"
+                        ? "bg-[#fcb941] rounded-full z-20 text-white mt-4 p-2 ml-24"
+                        : "rounded-full ml-24"
                     } ${isAddedToCompareList?"bg-cyan-600":"bg-[#fcb941]"} h-full flex flex-row align-middle items-center justify-center`}
                   >
                     <div
@@ -164,26 +164,26 @@ import { useNavigate } from "react-router";
               <img
                 src="https://static.pbcdn.in/health-cdn/images/insurer-logo/Niva_Bupa_(formerly_known_as_Max_Bupa)@2x.png"
                 alt="image1"
-                className={`w-full h-full mt-[-44%] rounded-3xl`}
+                className={`w-full h-full mt-[0%] rounded-3xl`}
               />
             )}
             {majorHoverState && (
               <img
                 src="https://static.pbcdn.in/health-cdn/images/insurer-logo/Care_Health@2x.png"
                 alt="image1"
-                className="w-full h-full mt-[-44%] rounded-3xl "
+                className="w-full h-full mt-[-20%] rounded-3xl "
               />
             )}
             <div
               className={`${
                 majorHoverState ? "opacity-100 z-30" : "opacity-0 z-0"
-              } transition-opacity duration-[300ms] ease-out flex flex-row justify-around items-center align-middle px-8 bg-[rgba(0,0,0,1)] mt-[-18%]`}
+              } transition-opacity duration-[300ms] ease-out flex flex-row justify-around items-center align-middle px-8 bg-[rgba(0,0,0,1)] mt-[-16%]`}
             >
-              <div className="text-white text-2xl p-2 hover:bg-[rgba(255,255,255,0.25)] rounded-full">
+              {/* <div className="text-white text-2xl p-2 hover:bg-[rgba(255,255,255,0.25)] rounded-full">
                 {" "}
                 <BsCartPlus />{" "}
               </div>
-              <div className="text-white text-2xl p-2">|</div>
+              <div className="text-white text-2xl p-2">|</div> */}
               <div
                 className="text-white text-2xl p-2 hover:bg-[rgba(255,255,255,0.25)] rounded-full"
                 onClick={handleOpen}
@@ -194,7 +194,7 @@ import { useNavigate } from "react-router";
             </div>
           </div>
           {/* Lower Div */}
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col mt-4 px-4">
             <div className="text-sm text-gray-400">
               {categoriesList.slice(0, 25)}...
             </div>
